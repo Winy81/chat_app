@@ -12,7 +12,7 @@ gem 'puma', '~> 3.11'
 
 gem 'devise', '4.7.1'
 
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-sass', '3.4.1'
 
 gem 'jquery-rails'
 # Use SCSS for stylesheets
