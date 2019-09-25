@@ -20,7 +20,9 @@ class RoomsController < ApplicationController
   end
 
   def show
-
+  	@room = Room.find(params[:id])
+  	@rooms = Room.all
+  	@room_message = RoomMessage.all.where(room_id:@room)
   end
 
   def edit

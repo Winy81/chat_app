@@ -1,0 +1,7 @@
+<%= render 'rooms' %>
+<h1>Room.show</h1>
+<h4><%= @room.name %></h4>
+
+<% @room_message.each do |message| %>
+  <%= message.message %>
+<% end %>
