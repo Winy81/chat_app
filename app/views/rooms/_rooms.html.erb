@@ -1,5 +1,9 @@
+<h4><%= link_to "Create a Room", new_room_path %></h4></br>
+
 <% unless @rooms.empty? %>
   <% @rooms.each do |room| %>
-  	<%= link_to room.name, room_path(room) %>
+  	<h5><%= link_to room.name, room_path(room) %></h5></br>
   <% end %>
+  <% else %>
+    <h4>No Room</h4>
 <% end %>
