@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root controller: :rooms, action: :index
 
   get 'rooms/:id', to: 'room_messages#new'
-  
+
   resources :room_messages
   resources :rooms
 
