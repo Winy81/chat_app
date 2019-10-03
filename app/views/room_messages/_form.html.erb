@@ -1,0 +1,14 @@
+<%= form_for :room_message, remote: true do |form| %>
+  <div class="input-group mb-3">
+    <%= form.text_field :message %>
+    <div class="input-group-append">
+      <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
+    </div>
+  </div>
+
+  <%= form.hidden_field :user_id, :value => current_user.id %>
+  <%= form.hidden_field :room_id :value => "5" %>
+
+
+
+<% end %>
