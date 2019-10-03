@@ -8,7 +8,7 @@ class RoomMessagesController < ApplicationController
   
 
   def create
-    @room_message = RoomMessage.create(message_params)
+    @new_room_message = RoomMessage.create(message_params)
     redirect_to rooms_path                                   
   end
 
