@@ -2,7 +2,7 @@ class RoomMessagesController < ApplicationController
 
   def new
   	@room = Room.find(params[:id])
-  	@room_message = RoomMessage.all
+  	@room_message = RoomMessage.all.where(room_id:@room)
   	@new_room_message = RoomMessage.new
   end
   
