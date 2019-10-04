@@ -3,8 +3,9 @@
 <h4><%= @room.name %></h4>
 
 <% @room_message.each do |message| %>
-  <p><%= message.message %></p>
+  <p><%= message.message %><span> - <%= current_user.username%></span></p>
 <% end %>
+
 
 
 <%= render 'form' %>
