@@ -3,16 +3,21 @@
 <h4><%= @room.name %></h4>
 
 <% @room_message.each do |message| %>
-  <p><%= message.message %><span> - <%= current_user.username%></span></p>
+  <p><%= message.message %>
+  	<span> - User_id: <% @creator_of_message.each do |creator| 
+  							if creator.id == message.user_id %>
+  							  <%= creator.username %>
+  						    <% end %>
+  					  <% end %>								
+  	</span>
+  </p>
 <% end %>
-
-
 
 <%= render 'form' %>
 
 </br>
 <hr>
-<p><%= @current_room %></p>
+  <p><%= @current_room %></p>
 <hr>
 <%= link_to "Back for list of the rooms", rooms_path %>
 
