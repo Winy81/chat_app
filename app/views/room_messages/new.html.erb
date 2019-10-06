@@ -4,7 +4,7 @@
 
 <% @room_message.each do |message| %>
   <p><%= message.message %>
-  	<span> - User_id: <% @creator_of_message.each do |creator| 
+  	<span> - User: <% @creator_of_message.each do |creator| 
   							if creator.id == message.user_id %>
   							  <%= creator.username %>
   						    <% end %>

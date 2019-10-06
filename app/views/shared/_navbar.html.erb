@@ -1,5 +1,7 @@
 <nav class="navbar">
-
 <h1>Navbar</h1>
+<h4>Username: <%= current_user.username %></h4>
+<h4>User Id: <%= current_user.id %></h4>
+
   <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 </nav>
