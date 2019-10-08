@@ -1,6 +1,7 @@
 class RoomMessagesController < ApplicationController
 
   def new
+  	@rooms = Room.all
   	@room = Room.find(params[:id])
   	@room_message = RoomMessage.all.where(room_id:@room)
   	@current_room = @room.id
