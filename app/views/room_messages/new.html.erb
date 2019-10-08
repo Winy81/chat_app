@@ -1,6 +1,7 @@
 <%= render 'rooms/rooms' %>
 <h1>Room.show</h1>
-<h4><%= @room.name %></h4>
+<h4>You are in the <%= @room.name %> Room</h4>
+<h4>Room's Id is: <%= @current_room %></h4>
 
 <% @room_message.each do |message| %>
   <p><%= message.message %>
@@ -17,8 +18,7 @@
 
 </br>
 <hr>
-  <p><%= @current_room %></p>
-<hr>
+
 <%= link_to "Close the room", @room, method: :delete %></br>
 <%= link_to "Back for list of the rooms", rooms_path %>
 
