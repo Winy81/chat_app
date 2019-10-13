@@ -21,11 +21,14 @@ RSpec.feature "Rooms creation" do
   	click_button('Save')
 
   	expect(page).to have_content(@first_room.name)
-  	expect(page).to have_content('Second Room')
+  	expect(page).to have_content('Room has been created with name: Second Room')
+  	expect(page).to have_content("Second Room")
 
   end
 
   scenario "Create room unsuccessfully" do
+
+  	rooms = Room.all.count
 
   	visit "/"
 
@@ -36,7 +39,7 @@ RSpec.feature "Rooms creation" do
 
   	expect(page).to have_content(@first_room.name)
   	expect(page).to have_content("Room hasn't been created")
-  	
+  	expect(rooms).to eq(1)	
 
   end
 
