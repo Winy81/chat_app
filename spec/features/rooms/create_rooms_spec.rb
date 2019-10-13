@@ -35,7 +35,7 @@ RSpec.feature "Rooms creation" do
   	click_button('Save')
 
   	expect(page).to have_content(@first_room.name)
-  	expect(page).to have_content("Room has not been created")
+  	expect(page).to have_content("Room hasn't been created")
   	
 
   end

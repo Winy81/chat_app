@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
   	  redirect_to rooms_path
   	else
   	  flash[:alert] = "Room hasn't been created"
-  	  render :new
+  	  redirect_to rooms_path
   	end
   end
 
