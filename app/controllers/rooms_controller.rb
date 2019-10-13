@@ -24,8 +24,14 @@ class RoomsController < ApplicationController
 
   def destroy
   	@room = Room.find(params[:id])
-  	@room.destroy
-  	redirect_to rooms_path
+  	if @room.destroy
+  	  flash[:alert] = "#{@room.name}'s room has been closed"
+  	  redirect_to rooms_path
+  	else
+  	  flash[:alert] = "Room has not been closed"
+  	  redirect_to rooms_path(@room)
+  	end
+
   end
 
   private

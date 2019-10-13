@@ -30,8 +30,7 @@ RSpec.feature "Destroy room" do
   	rooms = Room.all.count
 
   	expect(page).to have_content(@second_room.name)
-  	expect(page).to_not have_content(@first_room.name)
-  	expect(page).to have_content("Room has been closed")
+  	expect(page).to have_content("#{@first_room.name}'s room has been closed")
   	expect(rooms).to eq(1)
 
   end
