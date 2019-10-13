@@ -25,4 +25,19 @@ RSpec.feature "Rooms creation" do
 
   end
 
+  scenario "Create room unsuccessfully" do
+
+  	visit "/"
+
+  	expect(page).to have_content(@first_room.name)
+
+  	fill_in('room_name', :with => '')
+  	click_button('Save')
+
+  	expect(page).to have_content(@first_room.name)
+  	expect(page).to have_content("Room has not been created")
+  	
+
+  end
+
 end
