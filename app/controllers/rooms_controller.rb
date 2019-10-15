@@ -16,12 +16,6 @@ class RoomsController < ApplicationController
   	end
   end
 
-  def show
-  	@room = Room.find(params[:id])
-  	@rooms = Room.all
-  	@room_message = RoomMessage.all.where(room_id:@room)
-  end
-
   def destroy
   	@room = Room.find(params[:id])
   	if @room.destroy
