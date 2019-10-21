@@ -35,13 +35,12 @@ RSpec.feature "Index page" do
 
   scenario "loggout" do
 
-  	visit "/"
-
   	john = User.create(username:"John", email:"john@test.com", password:"password")
+    first_room = Room.create(name: "First Room")
+    login_as(john)
 
-  	first_room = Room.create(name: "First Room")
+    visit "/"
 
-  	login_as(@john)
   	expect(find_link('Logout'))
   	click_link('Logout')
 

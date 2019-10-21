@@ -1,9 +1,10 @@
 <nav class="navbar">
-<h1>Navbar</h1>
-<% if current_user %>
-  <h4>Username: <%= current_user.username %></h4>
-  <h4>User Id: <%= current_user.id %></h4>
-<% end %>
-
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+  <h1>Navbar</h1>
+  <% if current_user %>
+    <h4>Username: <%= current_user.username %></h4>
+    <h4>User Id: <%= current_user.id %></h4>
+    <div class="auth-links a">
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    </div>
+  <% end %>
 </nav>
