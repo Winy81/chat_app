@@ -15,7 +15,7 @@ RSpec.feature "Index page" do
 
   end
 
-    scenario "logging in" do
+  scenario "logging in" do
 
   	visit "/"
 
@@ -31,6 +31,32 @@ RSpec.feature "Index page" do
     expect(find_link('Logout'))
     expect(page).to have_content("No Room")
 
+  end
+
+  scenario "loggout" do
+
+  	visit "/"
+
+  	john = User.create(username:"John", email:"john@test.com", password:"password")
+
+  	first_room = Room.create(name: "First Room")
+
+  	login_as(@john)
+  	expect(find_link('Logout'))
+  	click_link('Logout')
+
+  	expect(page).to have_content("Log in")
+  	expect(find_field('user_email'))
+  	expect(find_field('user_password'))
+  	expect(find_button('Log in'))
+  	expect(find_link('Sign up').visible?)
+  	expect(find_link('Forgot your password?').visible?)
+  	expect(page).to have_content("You need to sign in or sign up before continuing.")
+
+  	expect(page).to_not have_field(:id => "room_name")
+  	expect(page).to_not have_content(first_room.name)
+  	expect(page).to_not have_content(john.username)
+  	expect(page).to_not have_content(john.id)
 
   end
 
