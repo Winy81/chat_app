@@ -57,6 +57,7 @@ RSpec.feature "Index page" do
   	expect(page).to_not have_content(first_room.name)
   	expect(page).to_not have_content(john.username)
   	expect(page).to_not have_content(john.id)
+    expect(page).to_not have_content("Logout")
 
   end
 
