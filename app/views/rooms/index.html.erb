@@ -1,13 +1,12 @@
-<h1>Room index</h1>
+<h2>List of rooms</h2>
+
+<%= render 'rooms' %>
+
 
 <h2>Create a new Room</h2>
 
 <%= form_for @room do |form| %>
   <%= form.text_field :name %>
-  <%= form.submit "Save" %>
+  <%= form.submit "Save", class:'btn btn-primary' %>
 <% end %>
-
-<h2>List of rooms</h2>
-
-<%= render 'rooms' %>
 

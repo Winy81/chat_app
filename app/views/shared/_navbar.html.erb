@@ -6,7 +6,7 @@
   <% if current_user %>
     <li class="nav-item" style="margin: 5px; margin-top:20px"><h4>Username: <%= current_user.username %> - </h4></li>
     <li class="nav-item" style="margin: 5px; margin-top:20px""><h4>User Id: <%= current_user.id %> - </h4></li>
-    <li class="nav-item" style="margin: 5px; margin-top:20px"">
+    <li class="nav-item" style="margin: 5px; margin-top:20px">
       <h4><%= link_to 'Logout', destroy_user_session_path, method: :delete %></h4>
     </li>
   <% end %>
