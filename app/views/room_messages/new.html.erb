@@ -1,7 +1,10 @@
+<div class="col-md-5">
 <h2>List of available rooms:</h2>
 
 <%= render 'rooms/rooms' %>
 
+</div>
+<div class="col-md-5">
 <h1>Room.show</h1>
 
 <h4>You are in the <%= @room.name %> Room</h4>
@@ -26,3 +29,4 @@
 <%= link_to "Close the room", @room, method: :delete %></br>
 <%= link_to "Back for list of the rooms", rooms_path %>
 
+</div>
