@@ -14,13 +14,15 @@
       <div class="row">
         <div class="col-12">
           <%= render "shared/navbar" %>
+          
              <% flash.each do |key, message| %>
                <div class="text-center alert alert-<%= key == 'notice' ? 'success' : 'danger' %>">
                  <%= message %> 
                </div>
              <% end %>
-             
+          <div class="container">  
           <%= yield %>
+          </div>
       </div>
     </div>
   </body>

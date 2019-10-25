@@ -6,11 +6,25 @@ body {
 }
 
 #list_of_room {
-  height: 800px;
+  height: 700px;
   border:2px solid red;
 }
 
 #list_of_messages{
-  height: 800px;
+  height: 700px;
   border:2px solid red;
+}
+
+.small_content_holder {
+    margin-left:12%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+	margin-top:100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
