@@ -1,26 +1,32 @@
 <div id="list_of_room" class="col-md-5">
-<h2>List of available rooms:</h2>
-
-<%= render 'rooms/rooms' %>
-
+  <div class="small_content_holder">
+    <h2>List of available rooms:</h2></br>
+      <div style="margin-left: 2%;">
+		<%= render 'rooms/rooms' %>
+	  </div>
+  </div>
 </div>
 
-<div <div id="list_of_messages" class="col-md-7 align-items-center">
+<div id="list_of_messages" class="col-md-7 align-items-center">
 <h1>Room.show</h1>
 
-<h4>You are in the <%= @room.name %> Room</h4>
-<h4>Room's Id is: <%= @current_room %></h4>
+<div class="text-muted" style="margin-left:2%">
+  <h4>You are in the <%= @room.name %> Room</h4>
+  <h4>Room's Id is: <%= @current_room %></h4></br>
+</div>
 
-<% @room_message.each do |message| %>
-  <p><%= message.message %>
-  	<span> - User: <% @creator_of_message.each do |creator| 
+<div class="small_content_holder_on_messages">
+  <% @room_message.each do |message| %>
+    <p><%= message.message %>
+  	  <span> - User: <% @creator_of_message.each do |creator| 
   							if creator.id == message.user_id %>
   							  <%= creator.username %>
   						    <% end %>
   					  <% end %>								
-  	</span>
-  </p>
-<% end %>
+  	  </span>
+    </p>
+  <% end %>
+</div></br>
 
 <%= render 'form' %>
 

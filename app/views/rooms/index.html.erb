@@ -1,28 +1,29 @@
 
 <div id="list_of_room" class="col-md-5">
-	<div class="small_content_holder">
-<h2>List of available rooms:</h2></br>
+  <div class="small_content_holder">
+    <h2>List of available rooms:</h2></br>
 
-<div style="margin-left: 2%;">
-<%= render 'rooms' %>
+    <div style="margin-left: 2%;">
 
+      <%= render 'rooms' %>
+
+    </div>
+
+  </br>
+  <hr>
+
+  <h2>Create a new Room</h2>
+
+    <%= form_for @room do |form| %>
+      <%= form.text_field :name %>
+      <%= form.submit "Save", class:'btn btn-primary' %>
+    <% end %>
+  </div>
 </div>
 
-</br>
-<hr>
-
-<h2>Create a new Room</h2>
-
-<%= form_for @room do |form| %>
-  <%= form.text_field :name %>
-  <%= form.submit "Save", class:'btn btn-primary' %>
-<% end %>
-</div>
-</div>
-
-<div <div id="list_of_messages" class="col-md-7 align-items-center">
-	<div class="small_content_holder">
- <h1>You Are not seleceted room yet</h1>
-</div>
+<div id="list_of_messages" class="col-md-7 align-items-center">
+  <div class="small_content_holder">
+    <h1 class="text-muted">You Are not seleceted room yet</h1>
+  </div>
 </div>
 
