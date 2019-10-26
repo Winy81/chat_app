@@ -6,13 +6,18 @@ body {
 }
 
 #list_of_room {
-  height: 700px;
+  height: 650px;
   border:2px solid red;
+  border-width:0px 1px 0px 1px;
+  border-style:solid;
+  border-color:#eeeeee;
 }
 
 #list_of_messages{
-  height: 700px;
-  border:2px solid red;
+  height: 650px;
+  border-width:0px 1px 0px 1px;
+  border-style:solid;
+  border-color:#eeeeee;
 }
 
 .small_content_holder {
@@ -27,4 +32,5 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom:50px;
 }
