@@ -1,8 +1,10 @@
 <%= form_for @new_room_message, remote: true do |form| %>
-  <div class="input-group mb-3">
-  	<div class="input-group-append">
-      <%= form.text_field :message %>
-      <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
+<div id="input_field_for_message">
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+  	  <span class="input-group-text text-muted">Your Message: </span>
+       <%= form.text_field :message, class: 'input_field_message' %>
+       <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
     </div>
   </div>
   <%= form.hidden_field :room_id, :value => @current_room %>
@@ -10,3 +12,6 @@
 
 
 <% end %>
+</div>
+</br>
+</br>
