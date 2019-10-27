@@ -12,14 +12,15 @@
   </br>
   <hr>
 
-  <h2>Create a new Room</h2>
+  <h2>Create a new Room</h2></br>
 
-    <%= form_for @room do |form| %>
-      <%= form.text_field :name %>
-      <%= form.submit "Save", class:'btn btn-primary' %>
-    <% end %>
+   <%= render 'form' %>
+
+   </br>
+
   </div>
 </div>
+
 
 <div id="list_of_messages" class="col-md-7 align-items-center">
   <div class="small_content_holder">
