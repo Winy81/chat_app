@@ -57,3 +57,22 @@ body {
 .input_field_room{
 	width: 175px;
 }
+
+@media only screen and (min-width: 480px) and (max-width: 1024px){
+
+.input_field_room{
+	width: 100px;
+}
+
+.input_field_message{
+	width:125px;
+}
+
+.small_content_holder_on_messages {
+    margin-left:5%;
+    justify-content: center;
+    width: 325px;
+    align-items: center;
+}
+
+}
