@@ -2,7 +2,7 @@
  <h1 class="" style="margin-left: 10%">Chat-App</h1>
   <nav class="navbar navbar-fixed-top" role="navigation">
 
-  <ul class="nav navbar-nav navbar-right text-muted" style="margin-right:50px">
+  <ul id="user_details_menu" class="nav navbar-nav navbar-right text-muted">
   <% if current_user %>
     <li class="nav-item" style="margin: 5px; margin-top:20px"><h4>Username: <%= current_user.username %> - </h4></li>
     <li class="nav-item" style="margin: 5px; margin-top:20px""><h4>User Id: <%= current_user.id %> - </h4></li>
