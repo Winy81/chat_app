@@ -30,11 +30,13 @@ RSpec.feature "Rooms creation" do
 
   	rooms = Room.all.count
 
+    name_of_room = ([*('a'..'z'),*('0'..'9')]).sample(32).join.to_s
+
   	visit "/"
 
   	expect(page).to have_content(@first_room.name)
 
-  	fill_in('room_name', :with => '')
+  	fill_in('room_name', :with => name_of_room)
   	click_button('Save')
 
   	expect(page).to have_content(@first_room.name)
