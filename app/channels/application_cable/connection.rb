@@ -7,6 +7,10 @@ module ApplicationCable
       self.current_user = find_current_user
     end
 
+    def dissconnect
+
+    end
+
     protected
 
     def find_current_user
