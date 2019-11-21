@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_11_21_111621) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "security"
+    t.boolean "security", default: false
     t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
