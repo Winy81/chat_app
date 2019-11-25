@@ -4,6 +4,7 @@
     <div class="input-group-prepend">
       <span class="input-group-text text-muted">Name of Room: </span>
       <%= form.text_field :name, class: 'input_field_room'%>
+      <%= form.check_box :security %>
       <%= form.submit "Save", class: 'btn btn-primary' %>
 	</div>
   </div>
