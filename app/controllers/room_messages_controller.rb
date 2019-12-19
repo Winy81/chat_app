@@ -3,7 +3,7 @@ class RoomMessagesController < ApplicationController
   def new
   	@rooms = Room.all
   	@room = Room.find(params[:id])
-  	@room_message = RoomMessage.all.where(room_id:@room)
+  	@room_message = RoomMessage.messgage_filter(room_id:@room)
   	@current_room = @room.id
   	@creator_of_message = User.all
   	@new_room_message = RoomMessage.new
