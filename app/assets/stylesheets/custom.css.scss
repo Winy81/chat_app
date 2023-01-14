@@ -13,16 +13,10 @@ header{
 
 }
 
-
 #user_details_menu{
   margin-right:50px; 
   padding-bottom: 15px;
   margin-top:-10px;
-  border-radius:3px; 
-  background-color: white;
-  border-width:0px 2px 0px 2px;
-  border-style:solid;
-  border-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.15),rgba(0,0,0,0)) 1 100%;
 }
 
 #list_of_room {
@@ -56,12 +50,12 @@ header{
 }
 
 .container {
-	margin-top:100px;
+	margin-top:50px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom:50px;
+    margin-bottom:30px;
 }
 
 #input_field_for_message{
