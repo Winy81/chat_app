@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_12_110259) do
+ActiveRecord::Schema.define(version: 2023_01_18_111506) do
 
   create_table "room_messages", force: :cascade do |t|
     t.integer "room_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2023_01_12_110259) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "security", default: false
+    t.string "members"
     t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
