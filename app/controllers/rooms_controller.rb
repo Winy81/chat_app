@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-		room_details = is_the_room_secured? ? room_params.merge(members:[current_user.id]) : room_params
+		room_details = is_the_room_secured? ? room_params.merge(members:"#{current_user.id},") : room_params
   	@room =Room.new(room_details)
   	if @room.save
   	  flash[:success] = "Room has been created with name: #{@room.name}"

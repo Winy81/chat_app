@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2023_01_18_111506) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "security", default: false
-    t.string "members"
+    t.text "members"
     t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
