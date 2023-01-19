@@ -6,7 +6,8 @@ class RoomsController < ApplicationController
   end
 
   def create
-  	@room =Room.new(room_params)
+		room_details = is_the_room_secured? ? room_params.merge(members:[current_user.id]) : room_params
+  	@room =Room.new(room_details)
   	if @room.save
   	  flash[:success] = "Room has been created with name: #{@room.name}"
   	  redirect_to rooms_path
@@ -34,5 +35,9 @@ class RoomsController < ApplicationController
   	params.require(:room).permit(:name,
                                  :security)
   end
+
+	def is_the_room_secured?
+		room_params['security'].to_i == 1
+	end
 
 end
