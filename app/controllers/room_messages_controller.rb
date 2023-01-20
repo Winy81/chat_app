@@ -7,6 +7,7 @@ class RoomMessagesController < ApplicationController
   	@current_room = @room.id
   	@creator_of_message = User.all
   	@new_room_message = RoomMessage.new
+    @users = User.all
   end
   
 
