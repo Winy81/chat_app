@@ -7,12 +7,10 @@
     </br>
     <hr>
 
-    <h2 style="padding-top: 20px">List of Users:</h2>
-
-    </br>
-
-    <%= @users.first.username %>
-
+    <h2>List of Users:</h2></br>
+    <div style="margin-left: 2%;">
+      <%= render 'rooms/users' %>
+    </div>
     </br>
   </div>
 </div>
@@ -28,10 +26,13 @@
   <div class="small_content_holder_on_messages">
     <% @room_message.each do |message| %>
       <p><%= message.message %>
-        <span> - User:
+        <span class="text-muted">
+          -
           <% @creator_of_message.each do |creator| %>
           <% if creator.id == message.user_id %>
           <%= creator.username %>
+          -
+          <%= message.created_at %>
           <% end %>
           <% end %>
   	  </span>
