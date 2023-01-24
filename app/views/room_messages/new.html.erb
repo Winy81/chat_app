@@ -32,7 +32,7 @@
           <% if creator.id == message.user_id %>
           <%= creator.username %>
           -
-          <%= message.created_at %>
+          <%= format_date(message.created_at) %>
           <% end %>
           <% end %>
   	  </span>

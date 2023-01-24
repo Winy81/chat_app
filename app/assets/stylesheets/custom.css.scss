@@ -49,16 +49,15 @@ header{
 }
 
 .container {
-	margin-top:50px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
 #input_field_for_message{
-	width:480px;
+	width:440px;
 	float:left;
 	margin-left:15%;
 }
