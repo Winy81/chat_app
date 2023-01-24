@@ -3,8 +3,8 @@
     <% @users.each do |user| %>
       <% unless user == current_user %>
         <h4><%= user.username%>
-          <button type="button" class="btn btn-success">Invite</button>
-          <button type="button" class="btn btn-danger">Uninvite</button>
+          <%= link_to 'Invite', invite_path(), class: 'btn btn-outline-secondary' , :method => :post %>
+          <%= link_to 'Uninvite', uninvite_path(), class: 'btn btn-outline-danger', :method => :delete %>
         </h4>
       <% end %>
     <% end %>

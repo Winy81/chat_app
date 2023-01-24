@@ -2,7 +2,7 @@ class RoomMessagesController < ApplicationController
 
   def new
   	@rooms = Room.all
-  	@room = Room.find(params[:id])
+    @room = Room.find(params[:id])
   	@room_message = RoomMessage.message_filter(room_id:@room).order(created_at: :desc)
   	@current_room = @room.id
   	@creator_of_message = User.all
