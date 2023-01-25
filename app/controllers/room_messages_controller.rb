@@ -4,7 +4,7 @@ class RoomMessagesController < ApplicationController
   	@rooms = Room.all
     @room = Room.find(params[:id])
   	@room_message = RoomMessage.message_filter(room_id:@room).order(created_at: :desc)
-  	@current_room = @room.id
+  	@current_room_id = @room.id
   	@creator_of_message = User.all
   	@new_room_message = RoomMessage.new
     @users = User.all
@@ -13,9 +13,9 @@ class RoomMessagesController < ApplicationController
 
   def create
     @new_room_message = RoomMessage.new(message_params)
-    @current_room = @new_room_message.room_id
+    @current_room_id = @new_room_message.room_id
     @new_room_message.save
-    redirect_to room_path(@current_room)                                   
+    redirect_to room_path(@current_room_id)
   end
 
   private
