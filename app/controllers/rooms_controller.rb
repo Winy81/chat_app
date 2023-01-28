@@ -6,25 +6,29 @@ class RoomsController < ApplicationController
 	end
 
 	def create
-		@room = Room.new(room_params)
-
-		if @room.save
-			if is_the_room_secured?
-				@access = @room.accesses.new(user_id:current_user.id)
-				if @access.save
-					flash[:notice] = "Room has been created with name: #{@room.name}"
-					redirect_to rooms_path
+		if Access.under_created_room_limit_by_user?(current_user)
+			@room = Room.new(room_params)
+			if @room.save
+				if is_the_room_secured?
+					@access = @room.accesses.new(user_id:current_user.id)
+					if @access.save
+						flash[:notice] = "Room has been created with name: #{@room.name}"
+						redirect_to rooms_path
+					else
+						@room.delete
+						flash[:alert] = "Room hasn't been created"
+						redirect_to rooms_path
+					end
 				else
-					@room.delete
-					flash[:alert] = "Room hasn't been created"
+					flash[:notice] = "Room has been created with name: #{@room.name}"
 					redirect_to rooms_path
 				end
 			else
-				flash[:notice] = "Room has been created with name: #{@room.name}"
+				flash[:alert] = "Room hasn't been created"
 				redirect_to rooms_path
 			end
 		else
-			flash[:alert] = "Room hasn't been created"
+			flash[:alert] = "Room hasn't been created, you are joined for to much rooms"
 			redirect_to rooms_path
 		end
 	end
