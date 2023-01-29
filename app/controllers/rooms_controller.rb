@@ -12,35 +12,29 @@ class RoomsController < ApplicationController
 				if is_the_room_secured?
 					@access = @room.accesses.new(user_id:current_user.id)
 					if @access.save
-						flash[:notice] = "Room has been created with name: #{@room.name}"
-						redirect_to rooms_path
+						redirection_for_rooms_path_with_flash(:notice, "Room has been created with name: #{@room.name}")
 					else
 						@room.delete
-						flash[:alert] = "Room hasn't been created"
-						redirect_to rooms_path
+						redirection_for_rooms_path_with_flash(:alert, "Room hasn't been created")
 					end
 				else
-					flash[:notice] = "Room has been created with name: #{@room.name}"
-					redirect_to rooms_path
+					redirection_for_rooms_path_with_flash(:notice, "Room has been created with name: #{@room.name}")
 				end
 			else
-				flash[:alert] = "Room hasn't been created"
-				redirect_to rooms_path
+				redirection_for_rooms_path_with_flash(:alert, "Room hasn't been created")
 			end
 		else
-			flash[:alert] = "Room hasn't been created, you are joined for to much rooms"
-			redirect_to rooms_path
+			redirection_for_rooms_path_with_flash(:alert, "Room hasn't been created, you are joined for to much rooms")
 		end
 	end
 
 	def destroy
 		@room = Room.find(params[:id])
 		if @room.destroy
-			flash[:alert] = "#{@room.name}'s room has been closed"
-			redirect_to rooms_path
+			redirection_for_rooms_path_with_flash(:alert, "#{@room.name}'s room has been closed")
 		else
 			flash[:alert] = "Room has not been closed"
-			redirect_to rooms_path(@room)
+			redirect_to room_path(@room)
 		end
 
 	end

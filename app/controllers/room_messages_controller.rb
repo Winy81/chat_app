@@ -12,8 +12,7 @@ class RoomMessagesController < ApplicationController
       @new_room_message = RoomMessage.new
       @users = User.all
     else
-      flash[:alert] = "You have no access for this room"
-      redirect_to rooms_path
+      redirection_for_rooms_path_with_flash(:alert, "You have no access for this room")
     end
 
   end
