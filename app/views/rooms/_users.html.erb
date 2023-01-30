@@ -4,9 +4,9 @@
       <% unless user == current_user %>
         <h4><%= user.username%>
           <% if is_user_inviteable?(user, @room) %>
-            <%= link_to 'Invite', invite_path(access_params_builder(user, @current_room_id)), class: 'btn btn-outline-secondary' , :method => :post %>
+            <%= link_to 'Invite', invite_path(access_params_builder(user, @current_room_id)), class: "text-right", :method => :post %>
           <% else %>
-            <%= link_to 'Uninvite', uninvite_path(access_params_builder(user, @current_room_id)), class: 'btn btn-outline-danger', :method => :delete %>
+            <%= link_to 'Uninvite', uninvite_path(access_params_builder(user, @current_room_id)), class: "text-right text-danger", :method => :delete %>
           <% end %>
         </h4>
       <% end %>
