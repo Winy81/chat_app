@@ -1,7 +1,6 @@
 class RoomMessagesController < ApplicationController
 
   def new
-
     @room = Room.find(params[:id])
     @current_room_id = @room.id
 
@@ -14,9 +13,7 @@ class RoomMessagesController < ApplicationController
     else
       redirection_for_rooms_path_with_flash(:alert, "You have no access for this room")
     end
-
   end
-
 
   def create
     @new_room_message = RoomMessage.new(message_params)

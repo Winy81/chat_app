@@ -33,8 +33,7 @@ class RoomsController < ApplicationController
 		if @room.destroy
 			redirection_for_rooms_path_with_flash(:alert, "#{@room.name}'s room has been closed")
 		else
-			flash[:alert] = "Room has not been closed"
-			redirect_to room_path(@room)
+			redirection_to_a_room(@room.id, :alert, "Room with id: #{@room.id} has not been closed")
 		end
 
 	end
