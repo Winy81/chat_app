@@ -1,13 +1,13 @@
 <%= form_for @room do |form| %>
-<div id="input_field_for_rooms">
-  <div class="input-group input-group-sm mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text text-muted">Name of Room: </span>
-      <%= form.text_field :name, class: 'input_field_room'%></br></br>
-      <span class="input-group-text text-muted">Would you like your room be secured?</span>
-      <%= form.check_box :security %></br>
-      <%= form.submit "Create", class: 'btn btn-primary btn-block text_for_form' %>
-	</div>
+  <div id="input_field_for_rooms">
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text text-muted">Name of Room: </span>
+        <%= form.text_field :name, class: 'input_field_room'%></br></br>
+        <span class="input-group-text text-muted">Would you like your room be secured?</span>
+        <%= form.check_box :security %></br>
+        <%= form.submit "Create", class: 'btn btn-primary btn-block text_for_form' %>
+      </div>
+    </div>
   </div>
-</div>
 <% end %>

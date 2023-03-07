@@ -1,0 +1,17 @@
+<div class="small_content_holder_of_name_of_the_rooms">
+  <% unless @users.empty? %>
+    <% @users.each do |user| %>
+      <% unless user == current_user %>
+        <h4><%= user.username%>
+          <% if is_user_inviteable?(user, @room) %>
+            <%= link_to 'Invite', invite_path(access_params_builder(user, @current_room_id)), class: "text-right", :method => :post %>
+          <% else %>
+            <%= link_to 'Uninvite', uninvite_path(access_params_builder(user, @current_room_id)), class: "text-right text-danger", :method => :delete %>
+          <% end %>
+        </h4>
+      <% end %>
+    <% end %>
+  <% else %>
+    <h4>No User</h4>
+  <% end %>
+</div>

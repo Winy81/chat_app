@@ -18,7 +18,7 @@ RSpec.feature "Rooms creation" do
   	expect(page).to have_content(@first_room.name)
 
   	fill_in('room_name', :with => 'Second Room')
-  	click_button('Save')
+  	click_button('Create')
 
   	expect(page).to have_content(@first_room.name)
   	expect(page).to have_content('Room has been created with name: Second Room')
@@ -37,7 +37,7 @@ RSpec.feature "Rooms creation" do
   	expect(page).to have_content(@first_room.name)
 
   	fill_in('room_name', :with => name_of_room)
-  	click_button('Save')
+  	click_button('Create')
 
   	expect(page).to have_content(@first_room.name)
   	expect(page).to have_content("Room hasn't been created")
