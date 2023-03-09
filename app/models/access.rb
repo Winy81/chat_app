@@ -14,5 +14,4 @@ class Access < ApplicationRecord
     where(user_id:current_user.id).count <= Access::LimitOfUsedRooms::LIMIT_OF_ROOM_TO_USE
   end
 
-
 end

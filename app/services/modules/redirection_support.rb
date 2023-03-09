@@ -7,7 +7,7 @@ module Modules
     end
 
     def redirection_to_a_room(room_id, type = nil, message = nil)
-      flash[type] = message unless type.nil? || message.nil? 
+      flash[type] = message unless type.nil? || message.nil?
       redirect_to room_path(room_id)
     end
 
