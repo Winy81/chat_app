@@ -15,7 +15,7 @@ describe Access, type: :model do
     before do
       @user = User.create(username:'Test', email:'test@test.com', password:'password', role:'admin')
       @user.accesses.create(room_id:1)
-      @user.accesses.create(room_id:1)
+      @user.accesses.create(room_id:2)
     end
 
     it 'should provede access for the user if he has access for number of rooms under limit' do
