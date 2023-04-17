@@ -19,10 +19,10 @@ RSpec.feature "Rooms creation" do
 
   	click_link(@first_room.name)
 
-  	expect(page).to have_content("You are in the #{@first_room.name} Room")
+  	expect(page).to have_content("You are in room: #{@first_room.name}")
   	expect(page).to have_content("Room's Id is: #{@first_room.id}")
   	expect(page).to_not have_field(:id => "room_name")
-  	expect(page).to have_field(:id => "room_message_message")
+  	expect(page).to have_field(:id => "input_message")
   	expect(page).to have_content("Close the room")
   	expect(page).to have_content("Back for list of the rooms")
 
