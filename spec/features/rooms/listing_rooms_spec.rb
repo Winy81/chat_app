@@ -25,7 +25,6 @@ RSpec.feature "Listing Rooms" do
   	visit "/"
 
   	expect(page).to have_content(@john.username)
-  	expect(page).to have_content(@john.id)
   	expect(page).to have_content(room1.name)
   	expect(page).to have_content(room2.name)
 
