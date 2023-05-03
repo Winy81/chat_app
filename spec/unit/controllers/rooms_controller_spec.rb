@@ -75,6 +75,8 @@ describe RoomsController, type: :controller do
 
         it 'should refuse the create more room' do
 
+          get :index
+
         end
       end
     end
