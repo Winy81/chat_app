@@ -7,8 +7,8 @@ class RoomMessage < ApplicationRecord
   validates :message, presence: true
   validates :message, length: {minimum: 0, maximum: 10000}
 
-  def self.message_filter(parameters)
-  	all.where(parameters)
+  def self.message_filter(room_id)
+  	all.where(room_id:room_id)
   end
   
 end

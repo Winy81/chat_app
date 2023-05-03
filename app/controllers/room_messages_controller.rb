@@ -6,7 +6,7 @@ class RoomMessagesController < ApplicationController
 
     if access_for_the_current_room?
       @rooms = Room.all
-      @room_message = RoomMessage.message_filter(room_id:@room).order(created_at: :desc)
+      @room_message = RoomMessage.message_filter(@room.id).order(created_at: :desc)
       @creator_of_message = User.all
       @new_room_message = RoomMessage.new
       @users = User.all
