@@ -27,6 +27,4 @@ RSpec.feature "Rooms creation" do
   	expect(page).to have_content("Back for list of the rooms")
 
   end
-
-
 end
