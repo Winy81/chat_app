@@ -8,4 +8,8 @@ en:
       access_has_removed: 'access has been removed from this room'
       permission_has_not_been_delete: 'Permission has not been deleted for'
       permission_has_removed_already: 'Looks like permission already removed for'
+  room_messages:
+    alerts:
+      no_access: 'You have no access for this room'
+
 
